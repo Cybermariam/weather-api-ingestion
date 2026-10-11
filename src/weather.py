@@ -22,13 +22,13 @@ logging.basicConfig(level=logging.INFO,
 
 logger = logging.getLogger(__name__)
 file_handler = logging.FileHandler("logs/weather.log", mode="w")
-stream_handler = logging.StreamHandler()
+
 
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(formatter)
-stream_handler.setFormatter(formatter)
+
 logger.addHandler(file_handler)
-logger.addHandler(stream_handler)
+
 def fetch_weather():
 
     logger.info("Fetching Weather Data")
